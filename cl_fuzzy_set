@@ -1,0 +1,18 @@
+def cartessiun_product(set1, set2):
+    cartessiun_product_1=[(a,b)for a in set1 for b in set2]
+    return cartessiun_product_1
+
+def max_min_composition(relation1, relation2):
+    # Calculate the max-min composition
+    composition_result = np.maximum(np.expand_dims(relation1, axis=2), np.expand_dims(relation2, axis=0))
+    max_min_composition = np.min(composition_result, axis=1)
+    
+    return max_min_composition
+
+# Example usage
+relation1 = np.array([[0.2, 0.5, 0.8]])
+relation2 = np.array([[0.4], [0.6], [0.7]])
+
+result = max_min_composition(relation1, relation2)
+print("Max-min composition result:")
+print(result)
